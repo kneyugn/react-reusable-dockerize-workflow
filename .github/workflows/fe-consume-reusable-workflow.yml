@@ -8,11 +8,10 @@ on:
         type: string
 
 jobs:
-  consume-reusable:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Trigger Reusable Workflow
-        uses: ./.github/workflows/fe-reusable-workflow.yml
+  call-workflow-2-in-local-repo:
+    uses: ./.github/workflows/fe-reusable-workflow.yml
+    with:
+      docker_image_name: ${{ inputs.docker_image_name }}
+    secrets:
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERHUB_TOKEN: ${{ secrets.TOKEN  }}
