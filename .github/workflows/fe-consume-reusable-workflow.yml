@@ -14,4 +14,4 @@ jobs:
       docker_image_name: ${{ inputs.docker_image_name }}
     secrets:
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-      DOCKERHUB_TOKEN: ${{ secrets.TOKEN  }}
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN  }}
